@@ -1,83 +1,141 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-:root {
-  font-size: 62.5%;
+:root{
+font-size: 62.5%;
+--default-border:1px solid rgba(0,0,0,0.15);
+--default-border-radius: 1.2rem;
 }
 
-.content {
-  display: grid;
-  grid-template-areas:
-    ". . . . ."
-    ". hero . form ."
-    ". hero . form ."
-    ". . . . ."
-    ;
-    gap: 8.5rem;
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
 }
-main {
-  grid-area: form;
+.content{
+   display: grid;
+   grid-template-areas: 
+   ". . . . ."
+   ". hero . form ."
+   ". hero . form ."
+   ". . . . ."
+   ; 
+   gap: 8.5rem;
 }
-aside {
-  grid-area: hero;
+main{
+    grid-area: form;
 }
-body {
-  font-family: "Roboto";
-  font-size: 1.4rem;
+aside{
+    grid-area: hero;
 }
-aside h1 {
-  font-size: 6.4rem;
-  letter-spacing: 0rem;
+
+aside h1{
+    font-size: 6.4rem;
+    font-weight: 500;
+    line-height: 7.5rem;
 }
+
 main h2 span,
-aside h1 span {
-  color: #ff5678;
+aside h1 span{
+color: #ff5678;
 }
-
-main {
-  border: 0.1rem solid rgba(0, 0, 0, 0.15);
-  width: 60rem;
-  height: 52rem;
-  padding: 4.4rem 5.7rem;
-  border-radius: 1.2rem;
+main{
+    width: 60rem;
+    height: 52rem;
+    border: var(--default-border);
+    padding: 5.7rem 4.4rem;
+    border-radius: var(--default-border-radius);
 }
-main h2 {
-  max-width: 43rem;
-  font-size: 3.6rem;
-  font-weight: 500;
+main h2{
+    max-width: 43rem;
+    font-size: 3.6rem;
 }
 main .actions {
-  display: flex;
-  flex-flow: column wrap;
-  /* padding: 4.4rem 5.7rem; */
+    display: flex;
+    flex-flow: column wrap;
 }
-main .actions a {
-  background-color: #35e6e9;
-  color: #fff;
-  text-decoration: none;
-  height: 5.5rem;
-  font-size: 2.4rem;
-  border-radius: 1.2rem;
+main .actions a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5.4rem;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5.4rem;
+    background-color: #35e6e9;
+    color: #fff;
+    text-decoration: none;
+    height: 5.5rem;
+    font-size: 2.4rem;
+    border-radius: var(--default-border-radius);
+}  
+main .actions a + a{
+background-color: #ff5678;
+margin-top: 4.8rem;
 }
-main .actions a + a {
-  background-color: #ff5678;
-  margin-top: 4.8rem;
+main footer p{
+    font-size: 1.6rem;
+    margin-top: 8rem;
 }
-main footer p {
-  margin-top: 8rem;
-  font-size: 1.6rem;
+main footer a{
+    display: block;
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    text-align: center;
+    color: #000;
 }
-main footer a {
-  display: block;
-  margin-top: 1rem;
-  font-size: 1.8rem;
-  text-align: center;
-  color: #000;
+
+/* tela 2 */
+/* is-- une  */
+main form :is(input, select){
+    width: 48rem;
+    height: 5.5rem;
+    border: var(--default-border);
+    border-radius: var(--default-border-radius);
 }
+
+main form select{
+    appearance: none;
+}
+main form .select{
+    position: relative;
+}
+main form .select::after{
+    position: absolute;
+color: #35e6e9;
+top: 4.4rem;
+right: 4.4rem;
+font-size: 2.2rem;
+content: '\f107';
+font-family: 'Font Awesome 6 Free';
+font-weight: 600;
+z-index: 1;
+}
+
+main form input + button{
+background-color: transparent;
+cursor: pointer;
+border: none;
+color: #35e6e9;
+font-size: 2.4rem;
+}    
+main form{
+    margin-top: 1.6rem;
+}
+main form label{
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-transform: lowercase;
+}
+main header{
+    display: flex;
+    align-items: center;
+gap: 1.8rem;
+}
+main header i{
+color: #ff5678;
+font-size: 2.5rem;
+
+}
+
